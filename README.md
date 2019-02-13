@@ -35,6 +35,9 @@ accepts a movie title and returns information about that movie (movie title, yea
 
 ![userEx](images/movieResults.PNG?raw=true "Example user input")
 
+if no movie title is received, a default movie (Mr. Nobody) will be displayed
+![userEx](images/movieDefault.PNG?raw=true "Example user input")
+
 * `do-what-it-says`
 accepts information from the random.txt file and returns spotify information about that text
 ![userEx](images/doIt.PNG?raw=true "Example user input")
