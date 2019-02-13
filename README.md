@@ -18,23 +18,28 @@ LiriBot is a command line node app that takes in one of four search parameters a
 ### How to use LiriBot
 Liri uses the following commands: 
 1. `concert-this`
+concert-this takes in an artist or band and returns event information about upcoming concerts (venue, location, and date of event)
 ![userEx](images/concert.PNG?raw=true "Example User Input")
-concert-this takes in an artist or band and returns all of the upcoming concerts for that artist along with the venue, the location, and the date of the concert to your terminal/bash window.
+
 ![userEx](images/concertResults.PNG?raw=true "Example results")
 
 2. `spotify-this-song`
+spotify-this-song takes in a song title and returns information about that song and artist (the artist, song name, preview link of the song, and album)
+![userEx](images/spotify.PNG?raw=true "Example user Input")
 
-spotify-this-song takes in a song title and returns 
+![userEx](images/spotifyResults.PNG?raw=true "Example user Input")
 
 3. `movie-this`
+movie-this takes in a movie title and returns information about that movie (movie title, year, IMDB rating, Rotten Tomatoes rating, country, language, plot, and actors)
+![userEx](images/movie.PNG?raw=true "Example user input")
 
+![userEx](images/movieResults.PNG?raw=true "Example user input")
 
 * `do-what-it-says`
+do-what-it-says takes in information from the random.txt file and returns spotify information about that text
+![userEx](images/doIt.PNG?raw=true "Example user input")
 
-At command prompt run `node liri.js <pass in one of the commands from above> + <related criteria>`
-
-
-
+![userEx](images/doItResults.PNG?raw=true "Example user input")
 
 ### Author
 * Emily Radke 

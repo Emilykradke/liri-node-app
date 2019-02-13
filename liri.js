@@ -27,30 +27,31 @@ var command = process.argv[2];
 // switch case to take in a command 
 switch (command) {
     case "concert-this":
-        eventIt();
+        getConcertEvent();
         break;
     case "spotify-this-song":
-        if(songTitle === "") {
+        if (songTitle === "") {
             songTitle = "the sign ace of base"
-        }else{
+        } else {
             songTitle
         }
-        spotifyIt();
+        getSongInfo();
         break;
     case "movie-this":
-        if(movieTitle === ""){
+        if (movieTitle === ""){
             movieTitle = "mr nobody"
-        }else{
+        } else {
             movieTitle
         }
-        omdbIt();
+        getMovieInfo();
         break;
     case "do-what-it-says":
-        doIt();
+        getRandomSong();
         break;
 }
 
-function spotifyIt() {
+// use user input to query song data
+function getSongInfo() {
     spotify.search({ type: 'track', query: songTitle, limit: 1 }, function(err, data) {
         if (err) {
           return console.log('Error occurred: ' + err);
@@ -62,7 +63,8 @@ function spotifyIt() {
     });
 }
 
-function omdbIt() {
+// use user input to query movie data 
+function getMovieInfo() {
     // use axios to search omdb api
     axios.get("http://www.omdbapi.com/?t=" + movieTitle + "&y=&plot=short&apikey=trilogy").then(
     function(response) {
@@ -78,7 +80,8 @@ function omdbIt() {
 );
 }
 
-function eventIt() {
+// use user input to query concert event data 
+function getConcertEvent() {
     console.log(`
     Events for ${artistName.toUpperCase()}:
     `)
@@ -99,7 +102,8 @@ function eventIt() {
 );
 }
 
-function doIt() {
+// 
+function getRandomSong() {
     // use fs to read random.txt file and save song as variable 
     fs.readFile("random.txt", "utf8", function(error, data) {
         if (error) {
@@ -107,6 +111,6 @@ function doIt() {
         }
         var randomArr = data.split(",");
         songTitle = randomArr[1];
-        spotifyIt();
+        getSongInfo();
     })
 }
